@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>simple xo</title>
+      <style>
+          *{
+              box-sizing: border-box
+          }
+          .square{
+              width:120px;
+              height: 120px;
+              border: 1px solid #333;
+              float: left;
+               margin-bottom: 5px;
+              font-size: 120px;
+              background-color: darkorange;
+              text-align: center;
+           line-height: 80px;
+              color: #fff;
+              font-family: sans-serif
+            
+          }
+          .main{
+                float: left;;
+              position:relative;
+              top:150px;
+              left:500
+          }
+          .square.mg{
+              margin: 0 5;
+          }  
+          .clear{
+              clear:both
+          }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="square"    id="A1"  onclick="insert(A1);"></div>
+            <div class="square mg" id="A2"  onclick="insert(A2);"></div> 
+            <div class="square"    id="A3"  onclick="insert(A3);"></div><br><br><br> 
+            <div class="square"    id="A4"  onclick="insert(A4) ;" ></div>
+            <div class="square mg" id="A5"  onclick="insert(A5) ;"></div>
+            <div class="square"    id="A6"  onclick="insert(A6);"></div><br><br><br> 
+            <div class="square"    id="A7"  onclick="insert(A7);"></div>
+     <div class="square mg"        id="A8"     onclick="insert(A8);" ></div>
+            <div class="square"    id="A9"  onclick="insert(A9);"></div>
+           
+        </div> 
+         <div class="clear"></div>
+            
+        <script> 
+         var turn=true;
+   
+     var squares=[];
+
+        function checkwinner(){
+        for(var i=1;i<=9;i++){
+              var squares=window.A+i.innerHTML;
+           
+        }
+            if(squares[0]==squares[1]&squares[1]==squares[2]&&squares[0]!=""){
+                alert('player '+squares[0] +" wins the game")
+            }
+          }
+           
+            function insert(id) {
+               
+            if(turn)
+                {
+                id.innerHTML="x";
+                 turn=!true   
+                }
+          
+            else{
+                id.innerHTML="o"; 
+                  turn=true
+                }
+             
+            checkwinner();
+            }
+
+             
+         
+        </script>
+    </body>
+</html>
